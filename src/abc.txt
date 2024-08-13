@@ -1,0 +1,5 @@
+
+appid -->7442af9a
+appkey -->3a95c099faea27e5c7bcc842f1bb689b
+"https://api.edamam.com/search?q=chicken&app_id=7442af9a&app_key=3a95c099faea27e5c7bcc842f1bb689b"  
+

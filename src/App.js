@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Single from "./pages/Single";
 import Wishlist from "./pages/Wishlist";
-import NOTfound from "./pages/NOTfound";
+import NOTfound from "./pages/NOTfound"
 
 function App() {
   return (

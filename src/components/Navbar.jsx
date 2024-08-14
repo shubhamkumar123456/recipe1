@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { CiHeart } from "react-icons/ci";
 const Navbar = () => {
+  let arr = JSON.parse(localStorage.getItem('favItem')) || []
+  console.log(arr)
   return (
     <div>
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -16,7 +18,7 @@ const Navbar = () => {
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/wishlist"><CiHeart color='red' size={"30"}/><sup>0</sup>  Wishlist</Link>
+          <Link className="nav-link active" aria-current="page" to="/wishlist"><CiHeart color='red' size={"30"}/><sup>{arr.length}</sup>  Wishlist</Link>
         </li>
       
       

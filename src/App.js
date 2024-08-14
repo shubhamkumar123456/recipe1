@@ -7,15 +7,19 @@ import Navbar from "./components/Navbar";
 import Single from "./pages/Single";
 import Wishlist from "./pages/Wishlist";
 import NOTfound from "./pages/NOTfound"
+import { useState } from "react";
 
 function App() {
+  const [clicked, setclicked] = useState(false);
+
+
   return (
     <div className="App">
         <BrowserRouter>
        <div style={{marginBottom:"60px"}}> <Navbar/></div>
           <Routes>
               <Route path="/" element={<Home/>}/>
-              <Route path="/single" element={<Single/>}/>
+              <Route path="/single" element={<Single setclicked={setclicked} clicked={clicked}/>}/>
               <Route path="/wishlist" element={<Wishlist/>}/>
               <Route path="/*" element={<NOTfound/>}/>
           </Routes>

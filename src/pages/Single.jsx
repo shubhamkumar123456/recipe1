@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const Single = () => {
+const Single = (props) => {
 
   let arr = JSON.parse(localStorage.getItem('favItem')) || [];
     let location = useLocation()
@@ -11,11 +11,17 @@ const Single = () => {
 
     const handleWishlist = ()=>{
       console.log("hello")
-      console.log(location.state.recipe)
-      arr.push(location.state.recipe)
-      console.log(arr)
+      // console.log(location.state.recipe)
+      // arr.push(location.state.recipe)
+      // console.log(arr)
 
-      localStorage.setItem('favItem',JSON.stringify(arr))
+      let find = arr.find((ele)=>ele.label===location.state.recipe.label);
+      if(!find){
+        arr.push(location.state.recipe)
+        localStorage.setItem('favItem',JSON.stringify(arr))
+        props.setclicked(!props.clicked)
+      }
+
 
     }
   return (

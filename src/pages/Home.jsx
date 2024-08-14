@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
+
 const contentStyle = {
   margin: 0,
   width:"80vw",
@@ -12,6 +13,8 @@ const contentStyle = {
   background: 'brown',
 };
 const Home = () => {
+
+  console.log(process.env.API_KEY)
     const [items, setitems] = useState([]);
     const [item, setitem] = useState("cake");
     let searchRef = useRef()
@@ -21,7 +24,7 @@ const Home = () => {
         // let data = await res.json();
         // console.log(data)
 
-        let res = await axios.get(`https://api.edamam.com/search?q=${item}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`)
+        let res = await axios.get(`https://api.edamam.com/search?q=${item}&app_id=7442af9a&app_key=3a95c099faea27e5c7bcc842f1bb689b`)
 
         console.log(res.data.hits)
         setitems(res.data.hits)

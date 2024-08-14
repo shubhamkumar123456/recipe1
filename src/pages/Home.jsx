@@ -21,7 +21,7 @@ const Home = () => {
         // let data = await res.json();
         // console.log(data)
 
-        let res = await axios.get(`https://api.edamam.com/search?q=${item}&app_id=7442af9a&app_key=3a95c099faea27e5c7bcc842f1bb689b`)
+        let res = await axios.get(`https://api.edamam.com/search?q=${item}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`)
 
         console.log(res.data.hits)
         setitems(res.data.hits)
